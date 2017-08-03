@@ -4,7 +4,7 @@ MAINTAINER SAP SE
 # Install MongoDB 3.0
 RUN DEBIAN_FRONTEND=noninteractive && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
-    echo "deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist trusty" | tee /etc/apt/sources.list.d/mongodb-org-3.0.list && \
+    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list \
     apt-get update && \
     apt-get install -y --force-yes mongodb-org=3.0.14 mongodb-org-server=3.0.14 mongodb-org-shell=3.0.14 mongodb-org-mongos=3.0.14 mongodb-org-tools=3.0.14 runit && \
     service mongod stop && \
